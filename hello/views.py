@@ -3,5 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 def new (request):
-    # return HttpResponse("<h1> how is it going? </h1>")
    return render(request,'hello.html')
+def counter(request):
+   text=request.GET['text']
+   ammount_of_words=len(text.split())
+   return render(request,counter.html,{'words':ammount_of_words})
